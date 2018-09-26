@@ -6,6 +6,7 @@ Functions for reading and writing files
 **********************************************************************/
 #include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
 #include "file_utils.h"
 
 /**********************************************************************
@@ -21,6 +22,8 @@ int read_file(char* filename, char **buffer){
 	/** stores file size */
 	int b = ftell(fp);
 	fclose(fp);
+	/** Initializing buf to the size of the file */
+	*buffer = (char *)malloc(b * sizeof(char));
 
 	/** Opens file again to reset pointer to file and then reads
 	bytes from the file into buffer */

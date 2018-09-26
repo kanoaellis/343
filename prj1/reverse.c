@@ -20,15 +20,14 @@ int main(int argc, char** argv){
 	/** Will store the size of the file */
 	int a;
 	/** Buffer to store all of the bytes of the file */
-	char *buf;
-	buf = (char *)malloc(100 * sizeof(char));
+	char *buf;	
 	/** Pointer to buffer */
 	char **buffer = &buf;
 	a = read_file(argv[1], buffer);
 
 	/** Will store the bytes in buf, but reversed */
 	char *b;
-	b = (char *)malloc(100 * sizeof(char));
+	b = (char *)malloc(a * sizeof(char));
 	int j = 0;
 
 	/** Store bytes in buf into b in reverse order */
