@@ -2,6 +2,8 @@
 	#include "zoomjoystrong.tab.h"
 %}
 
+%option noyywrap
+
 %%
 
 END				return END;
