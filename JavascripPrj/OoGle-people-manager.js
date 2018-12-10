@@ -73,9 +73,17 @@ app.put('/:id', (req, res) => {
 
 app.post('/', (req, res) => {
 		const body = req.body; // Hold your JSON in here!
-		console.log(req.body);
-		dbArr[req.body.name] = req.body;
-		console.log(dbArr);
+         const bodyKey = Object.keys(body);
+         let data = {};
+         dbKey.forEach(k => {
+                       if (body[k]){
+                       data[k] = body[k];
+                       }
+                       else {
+                       data[k] = "";
+                       }
+                       });
+         dbArr.push(data);
 		res.send(`You sent: ${body}`);
 		});
 
